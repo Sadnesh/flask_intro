@@ -1,0 +1,10 @@
+# caches
+__pycache__
+
+# tests
+*test*.*
+
+# env files
+.env
+.venv
+
