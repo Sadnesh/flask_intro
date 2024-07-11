@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>CRUD application</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Update your task</h1>
+
+    <fieldset class="form-cover">
+        <form action="/update/{{task.id}}" method="POST">
+            <input type="text" name="content" id="content" value="{{task.content}}">
+            <input type="submit" value="Update">
+
+        </form>
+    </fieldset>
+
+
+</div>
+
+{% endblock %}

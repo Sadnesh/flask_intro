@@ -1,5 +1,35 @@
-body{
-    margin: 0px;
-    font-family: sans-serif;
-    background-color: rgb(177, 130, 221);
+body {
+  margin: 0px;
+  font-family: sans-serif;
+  background-color: rgb(232, 232, 233);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+table,td,th,tr{
+    border: 1px solid black;
+    border-spacing: 0;
+}
+th{
+    padding: 1rem;
+}
+
+td{
+    padding: 1.5rem;
+}
+.actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.form-cover{
+    margin: 2rem;
+    padding: .5rem;
 }
