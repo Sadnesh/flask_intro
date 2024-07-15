@@ -4,7 +4,7 @@
 {% block body %}
 <div class="content">
     <h1>Tasks</h1>
-    {%if task|length < 1%} <h4>There is no tasks. Create on below!!</h4>
+    {%if task.items|length < 1%} <h4>There is no tasks. Create on below!!</h4>
         {%else%}
         <table>
             <tr>
@@ -13,19 +13,34 @@
                 <th>Date added</th>
                 <th>Actions</th>
             </tr>
-            {% for t in task %}
+            {% for t in task.items %}
             <tr>
                 <td>{{t.id}}</td>
                 <td>{{t.content}}</td>
                 <td>{{t.date_created.strftime('%Y-%m-%d %H:%M %p')}}</td>
-                <td class="actions"><a onclick="return confirm('Are you sure?')" href="/delete/{{t.id}}">Delete</a> <a href="/update/{{t.id}}">Update</a>
+                <td class="actions"><a onclick="return confirm('Are you sure?')" href="/delete/{{t.id}}">Delete</a> <a
+                        href="/update/{{t.id}}">Update</a>
                 </td>
             </tr>
             {% endfor %}
+
         </table>
+        {% if task.has_prev %}
+        <div class="paginate">
+
+            <a href="{{ url_for('index',page=task.prev_num) }}">Previous</a>
+        </div>
+        {% endif %}
+        {% if task.has_next %}
+        <div class="paginate">
+
+            <a href="{{ url_for('index',page=task.next_num) }}">Next</a>
+        </div>
+        {% endif %}
         {% endif %}
         <fieldset class="form-cover">
             <form action="/" method="POST">
+                <input type="hidden" name="current_page" value="{{ request.args.get('page',1) }}">
                 <input type="text" name="content" id="content" placeholder="Enter your task here">
                 <input type="submit" value="Add task">
 

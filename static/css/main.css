@@ -10,26 +10,33 @@ body {
   align-items: center;
   height: 100vh;
 }
-table,td,th,tr{
-    border: 1px solid black;
-    border-spacing: 0;
+table,
+td,
+th,
+tr {
+  border: 1px solid black;
+  border-spacing: 0;
 }
-th{
-    padding: 1rem;
-}
-
-td{
-    padding: 1.5rem;
-}
-.actions{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
+th {
+  padding: 0.5rem;
 }
 
-.form-cover{
-    margin: 2rem;
-    padding: .5rem;
+td {
+  padding: 1rem;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.paginate {
+  padding-top: 2rem;
+}
+
+.form-cover {
+  margin: 2rem;
+  padding: 0.5rem;
 }
