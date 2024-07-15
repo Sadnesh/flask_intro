@@ -18,7 +18,7 @@
                 <td>{{t.id}}</td>
                 <td>{{t.content}}</td>
                 <td>{{t.date_created.strftime('%Y-%m-%d %H:%M %p')}}</td>
-                <td class="actions"><a href="/delete/{{t.id}}">Delete</a> <a href="/update/{{t.id}}">Update</a>
+                <td class="actions"><a onclick="return confirm('Are you sure?')" href="/delete/{{t.id}}">Delete</a> <a href="/update/{{t.id}}">Update</a>
                 </td>
             </tr>
             {% endfor %}
